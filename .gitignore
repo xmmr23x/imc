@@ -1,0 +1,8 @@
+# Ignorar archivos de objetos y ejecutables compilados
+*.o
+*.out
+*.d
+*.tar.gz
+
+# Ignorar directorios
+practicas/
