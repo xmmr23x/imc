@@ -5,4 +5,5 @@
 *.tar.gz
 
 # Ignorar directorios
-practicas/
+otras/
+memoria_plantilla/
