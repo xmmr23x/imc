@@ -7,3 +7,5 @@
 # Ignorar directorios
 otras/
 memoria_plantilla/
+memoria/
+build/
