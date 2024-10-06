@@ -13,12 +13,12 @@ import pandas as pd
 from sklearn import svm
 
 # Load the dataset
-data = pd.read_csv('dataset1.csv',header=None)
+data = pd.read_csv('../BasesDatos/csv/dataset3.csv',header=None)
 X = data.iloc[:,:-1].values
 y = data.iloc[:,-1].values
 
 # Train the SVM model
-svm_model = svm.SVC(kernel='linear',C=100)
+svm_model = svm.SVC(kernel='rbf',C=0.0001, gamma=0.01)
 svm_model.fit(X, y)
 
 # Show the points
@@ -41,7 +41,7 @@ Z = svm_model.decision_function(np.c_[XX.ravel(), YY.ravel()])
 # Make a color plot including the margin hyperplanes (Z=-1 and Z=1) and the
 # separating hyperplane (Z=0)
 Z = Z.reshape(XX.shape)
-plt.pcolormesh(XX, YY, Z > 0)
+plt.pcolormesh(XX, YY, Z > 0, cmap='tab20b')
 plt.contour(XX, YY, Z, colors=['k', 'k', 'k'], linestyles=['--', '-', '--'],
                 levels=[-1, 0, 1])
 
